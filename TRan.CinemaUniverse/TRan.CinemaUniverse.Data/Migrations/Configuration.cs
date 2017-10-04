@@ -1,10 +1,13 @@
 namespace TRan.CinemaUniverse.Data.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
     using TRan.CinemaUniverse.Data;
+    using TRan.CinemaUniverse.Models;
 
     public sealed class Configuration : DbMigrationsConfiguration<CinemaSqlDbContext>
     {
@@ -16,18 +19,28 @@ namespace TRan.CinemaUniverse.Data.Migrations
 
         protected override void Seed(CinemaSqlDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            this.SeedAdmin(context);
+        }
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+        private void SeedAdmin(CinemaSqlDbContext context)
+        {
+            const string AdministratorUserName = "tran@cinema.com";
+            const string AdministratorPassword = "12#$qwER";
+
+            if (!context.Roles.Any())
+            {
+                var roleStore = new RoleStore<IdentityRole>(context);
+                var roleManager = new RoleManager<IdentityRole>(roleStore);
+                var role = new IdentityRole { Name = "Admin" };
+                roleManager.Create(role);
+
+                var userStore = new UserStore<User>(context);
+                var userManager = new UserManager<User>(userStore);
+                var user = new User { UserName = AdministratorUserName, Email = AdministratorUserName, EmailConfirmed = true };
+                userManager.Create(user, AdministratorPassword);
+
+                userManager.AddToRole(user.Id, "Admin");
+            }
         }
     }
 }
