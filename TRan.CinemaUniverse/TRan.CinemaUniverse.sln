@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRan.CinemaUniverse.Web", "TRan.CinemaUniverse.Web\TRan.CinemaUniverse.Web.csproj", "{58CD500E-E12F-493E-95C0-54299A610FA8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{C21F4588-4EB4-4978-B6F7-E2A982ED0A15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRan.CinemaUniverse.Data", "TRan.CinemaUniverse.Data\TRan.CinemaUniverse.Data.csproj", "{1A05492C-9A50-47D6-9A23-A7D850A97A18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRan.CinemaUniverse.Models", "TRan.CinemaUniverse.Models\TRan.CinemaUniverse.Models.csproj", "{99D0A2AE-1543-493A-B453-948A2099FC22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58CD500E-E12F-493E-95C0-54299A610FA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58CD500E-E12F-493E-95C0-54299A610FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58CD500E-E12F-493E-95C0-54299A610FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58CD500E-E12F-493E-95C0-54299A610FA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A05492C-9A50-47D6-9A23-A7D850A97A18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A05492C-9A50-47D6-9A23-A7D850A97A18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A05492C-9A50-47D6-9A23-A7D850A97A18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A05492C-9A50-47D6-9A23-A7D850A97A18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99D0A2AE-1543-493A-B453-948A2099FC22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99D0A2AE-1543-493A-B453-948A2099FC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99D0A2AE-1543-493A-B453-948A2099FC22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99D0A2AE-1543-493A-B453-948A2099FC22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1A05492C-9A50-47D6-9A23-A7D850A97A18} = {C21F4588-4EB4-4978-B6F7-E2A982ED0A15}
+		{99D0A2AE-1543-493A-B453-948A2099FC22} = {C21F4588-4EB4-4978-B6F7-E2A982ED0A15}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {614F2BE6-C69E-4936-B51A-FF520C7384F1}
+	EndGlobalSection
+EndGlobal
