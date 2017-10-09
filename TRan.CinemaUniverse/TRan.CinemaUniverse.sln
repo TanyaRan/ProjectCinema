@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRan.CinemaUniverse.Data", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRan.CinemaUniverse.Models", "TRan.CinemaUniverse.Models\TRan.CinemaUniverse.Models.csproj", "{99D0A2AE-1543-493A-B453-948A2099FC22}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{FFA4EF71-228F-4F98-B375-B000D17CE2D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRan.CinemaUniverse.Services", "TRan.CinemaUniverse.Services\TRan.CinemaUniverse.Services.csproj", "{2F820C28-4695-4D4A-B08E-D9DA939EB238}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,10 @@ Global
 		{99D0A2AE-1543-493A-B453-948A2099FC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99D0A2AE-1543-493A-B453-948A2099FC22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99D0A2AE-1543-493A-B453-948A2099FC22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F820C28-4695-4D4A-B08E-D9DA939EB238}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F820C28-4695-4D4A-B08E-D9DA939EB238}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F820C28-4695-4D4A-B08E-D9DA939EB238}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F820C28-4695-4D4A-B08E-D9DA939EB238}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +44,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1A05492C-9A50-47D6-9A23-A7D850A97A18} = {C21F4588-4EB4-4978-B6F7-E2A982ED0A15}
 		{99D0A2AE-1543-493A-B453-948A2099FC22} = {C21F4588-4EB4-4978-B6F7-E2A982ED0A15}
+		{2F820C28-4695-4D4A-B08E-D9DA939EB238} = {FFA4EF71-228F-4F98-B375-B000D17CE2D6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {614F2BE6-C69E-4936-B51A-FF520C7384F1}

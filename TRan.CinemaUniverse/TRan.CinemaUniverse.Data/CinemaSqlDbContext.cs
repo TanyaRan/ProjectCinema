@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 using System;
-using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TRan.CinemaUniverse.Models;
+using TRan.CinemaUniverse.Models.Contracts;
 
 namespace TRan.CinemaUniverse.Data
 {
@@ -13,6 +12,44 @@ namespace TRan.CinemaUniverse.Data
         public CinemaSqlDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+        }
+
+        public new IDbSet<T> Set<T>()
+            where T : class
+        {
+            return base.Set<T>();
+        }
+
+        public IDbSet<Genre> Genres { get; set; }
+        public IDbSet<Movie> Movies { get; set; }
+        public IDbSet<WeekOffer> WeekOffers { get; set; }
+
+
+
+        public override int SaveChanges()
+        {
+            this.ApplyAuditInfoRules();
+            return base.SaveChanges();
+        }
+
+        private void ApplyAuditInfoRules()
+        {
+            foreach (var entry in
+                this.ChangeTracker.Entries()
+                    .Where(
+                        e =>
+                        e.Entity is IAuditable && ((e.State == EntityState.Added) || (e.State == EntityState.Modified))))
+            {
+                var entity = (IAuditable)entry.Entity;
+                if (entry.State == EntityState.Added && entity.CreatedOn == default(DateTime))
+                {
+                    entity.CreatedOn = DateTime.Now;
+                }
+                else
+                {
+                    entity.ModifiedOn = DateTime.Now;
+                }
+            }
         }
 
         public static CinemaSqlDbContext Create()
