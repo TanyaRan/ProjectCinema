@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,26 +13,35 @@ namespace TRan.CinemaUniverse.Web.Controllers
     public class HomeController : Controller
     {
         private readonly IMoviesService moviesService;
+        private readonly IMapper mapper;
 
-        public HomeController(IMoviesService moviesService)
+        public HomeController(IMoviesService moviesService, IMapper mapper)
         {
             this.moviesService = moviesService;
+            this.mapper = mapper;
         }
 
         public ActionResult Index()
         {
             var movies = this.moviesService
                 .GetAll()
-                .Select(x => new MovieViewModel
-                {
-                    Title = x.Title,
-                    Description = x.Description,
-                    Director = x.Director,
-                    ImageUrl = x.ImageUrl
-                })
+                .ProjectTo<MovieViewModel>()
                 .ToList();
 
-            return View(movies);
+            var viewModel = new HomeViewModel()
+            {
+                Movies = movies
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Index(MovieViewModel model)
+        {
+            // this.moviesService.Update();
+
+            return RedirectToAction("About");
         }
 
         public ActionResult About()

@@ -1,24 +1,29 @@
 ﻿@using TRan.CinemaUniverse.Web.Models.Home
-@model ICollection<MovieViewModel>
+@model HomeViewModel
 
 @{
     ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <h1>Cinema Universe</h1>
+    <p class="lead">Our awesome Cinema - old, but gold films</p>
     <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
 
 <div class="row">
-    @foreach (var movie in Model)
+    @foreach (var movie in Model.Movies)
     {
-        <div class="col-md-4">
-            <h2>@movie.Title</h2>
-            <img src="@movie.ImageUrl" alt="Movie Picture" style="max-width:100px"/>
-            <p>@movie.Description</p>
-            <p>@movie.Director</p>
-        </div>
+        @Html.Partial("_MovieDetailsPartial", movie)
     }
 </div>
+
+<h3>Edit Movie</h3>
+<div class="row">
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, null))
+    {
+        @Html.Partial("_MovieEditPartial", Model.Movies.First())
+        <input type="submit" value="Submit" />
+    }
+</div>
+

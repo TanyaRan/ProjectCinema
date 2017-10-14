@@ -15,6 +15,8 @@ namespace TRan.CinemaUniverse.Web.App_Start
     using TRan.CinemaUniverse.Services.Contracts;
     using TRan.CinemaUniverse.Data;
     using TRan.CinemaUniverse.Data.Repositories;
+    using TRan.CinemaUniverse.Data.SaveContext;
+    using AutoMapper;
 
     public static class NinjectWebCommon
     {
@@ -82,7 +84,8 @@ namespace TRan.CinemaUniverse.Web.App_Start
 
             kernel.Bind(typeof(DbContext), typeof(CinemaSqlDbContext)).To<CinemaSqlDbContext>().InRequestScope();
             kernel.Bind(typeof(IEfDbSetWrapper<>)).To(typeof(EfDbSetWrapper<>));
-
+            kernel.Bind<IEfSaveContext>().To<EfSaveContext>();
+            kernel.Bind<IMapper>().ToMethod(x => Mapper.Instance).InSingletonScope();
         }
     }
 }
