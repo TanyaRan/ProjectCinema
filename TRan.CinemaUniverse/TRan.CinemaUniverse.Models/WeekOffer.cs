@@ -7,11 +7,11 @@ namespace TRan.CinemaUniverse.Models
 {
     public class WeekOffer : DataModel
     {
-        private ICollection<Movie> movies;
+        private ICollection<Projection> projections;
 
         public WeekOffer()
         {
-            this.movies = new HashSet<Movie>();
+            this.projections = new HashSet<Projection>();
         }
 
         [Required]
@@ -21,9 +21,16 @@ namespace TRan.CinemaUniverse.Models
         [Required]
         public DateTime StartDate { get; set; }
 
-        [Required]
-        public DateTime EndDate { get; set; }
-
-        public virtual ICollection<Movie> Movies { get; set; }
+        public virtual ICollection<Projection> Projections
+        {
+            get
+            {
+                return this.projections;
+            }
+            set
+            {
+                this.projections = value;
+            }
+        }
     }
 }

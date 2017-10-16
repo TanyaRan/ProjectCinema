@@ -66,6 +66,14 @@
     <Compile Include="Migrations\201710080944333_CreateWeekOffer.Designer.cs">
       <DependentUpon>201710080944333_CreateWeekOffer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710160725024_CreateProjection.cs" />
+    <Compile Include="Migrations\201710160725024_CreateProjection.Designer.cs">
+      <DependentUpon>201710160725024_CreateProjection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710160824455_ChangeProjection_ChangeMovie.cs" />
+    <Compile Include="Migrations\201710160824455_ChangeProjection_ChangeMovie.Designer.cs">
+      <DependentUpon>201710160824455_ChangeProjection_ChangeMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EfDbSetWrapper.cs" />
@@ -92,6 +100,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710080944333_CreateWeekOffer.resx">
       <DependentUpon>201710080944333_CreateWeekOffer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710160725024_CreateProjection.resx">
+      <DependentUpon>201710160725024_CreateProjection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710160824455_ChangeProjection_ChangeMovie.resx">
+      <DependentUpon>201710160824455_ChangeProjection_ChangeMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

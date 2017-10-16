@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using TRan.CinemaUniverse.Models.Abstract;
 
 namespace TRan.CinemaUniverse.Models
@@ -7,10 +9,11 @@ namespace TRan.CinemaUniverse.Models
     {
         [Required]
         [StringLength(100, MinimumLength =2)]
+        [Index(IsUnique = true)]
         public string Title { get; set; }
 
         [Required]
-        [StringLength(1000, MinimumLength = 2)]
+        [StringLength(1000, MinimumLength = 10)]
         public string Description { get; set; }
 
         [Required]
@@ -26,6 +29,14 @@ namespace TRan.CinemaUniverse.Models
 
         [StringLength(100, MinimumLength = 2)]
         public string StarActress { get; set; }
+
+        [StringLength(100, MinimumLength = 10)]
+        public string Award { get; set; }
+
+        [StringLength(1000, MinimumLength = 10)]
+        public string FilmingStory { get; set; }
+
+        public Guid? GenreId { get; set; }
 
         public virtual Genre Genre { get; set; }
     }

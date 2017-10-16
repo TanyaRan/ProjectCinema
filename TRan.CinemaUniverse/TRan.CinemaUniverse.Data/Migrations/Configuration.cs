@@ -3,7 +3,6 @@ namespace TRan.CinemaUniverse.Data.Migrations
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
     using TRan.CinemaUniverse.Data;
@@ -26,11 +25,11 @@ namespace TRan.CinemaUniverse.Data.Migrations
 
         private void SeedAdmin(CinemaSqlDbContext context)
         {
-            const string AdministratorUserName = "tran@cinema.com";
-            const string AdministratorPassword = "12#$qwER";
+            const string AdministratorUserName = "admin@cinema.com";
+            const string AdministratorPassword = "Admin1!";
 
             const string LecturerUserName = "lecturer@cinema.com";
-            const string LecturerPassword = "12!@qwQW";
+            const string LecturerPassword = "Lecturer1!";
 
             if (!context.Roles.Any())
             {
@@ -83,7 +82,7 @@ namespace TRan.CinemaUniverse.Data.Migrations
         {            
             if (!context.Movies.Any())
             {
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 10; i++)
                 {
                     var movie = new Movie()
                     {
