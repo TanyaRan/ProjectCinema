@@ -1,8 +1,7 @@
 namespace TRan.CinemaUniverse.Data.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class CreateGenreMovie : DbMigration
     {
         public override void Up()

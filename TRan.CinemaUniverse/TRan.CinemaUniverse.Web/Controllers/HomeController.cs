@@ -1,12 +1,9 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using TRan.CinemaUniverse.Services.Contracts;
-using TRan.CinemaUniverse.Web.Models.Home;
+using TRan.CinemaUniverse.Web.ViewModels.Home;
 
 namespace TRan.CinemaUniverse.Web.Controllers
 {

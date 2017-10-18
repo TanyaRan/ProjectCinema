@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using TRan.CinemaUniverse.Data.Repositories;
 using TRan.CinemaUniverse.Data.SaveContext;
 using TRan.CinemaUniverse.Models;
@@ -18,6 +14,7 @@ namespace TRan.CinemaUniverse.Services
         public MoviesService(IEfDbSetWrapper<Movie> moviesWrapper,
             IEfSaveContext context)
         {
+            
             this.moviesWrapper = moviesWrapper;
             this.context = context;
         }
@@ -30,7 +27,7 @@ namespace TRan.CinemaUniverse.Services
         public void Update(Movie movie)
         {
             this.moviesWrapper.Update(movie);
-            this.context.Complete();
+            this.context.Commit();
         }
     }
 }

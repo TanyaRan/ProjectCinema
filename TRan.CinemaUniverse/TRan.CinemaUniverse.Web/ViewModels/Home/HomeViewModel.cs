@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TRan.CinemaUniverse.Web.Models.Home
+namespace TRan.CinemaUniverse.Web.ViewModels.Home
 {
     public class HomeViewModel
     {
