@@ -1,7 +1,7 @@
 ﻿@using TRan.CinemaUniverse.Web.Areas.Administration.ViewModels.Genres
-@model GenreCreateViewModel
+@model GenreEditViewModel
 @{
-    ViewBag.Title = "Create Genre";
+    ViewBag.Title = "Edit Genre";
 }
 
 
@@ -15,13 +15,13 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Name" })
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-success" value="Create" />
+            <input type="submit" class="btn btn-success" value="Edit" />
         </div>
     </div>
 }

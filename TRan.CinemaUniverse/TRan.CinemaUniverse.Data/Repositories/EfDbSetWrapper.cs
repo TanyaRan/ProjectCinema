@@ -8,7 +8,7 @@ using TRan.CinemaUniverse.Models.Contracts;
 namespace TRan.CinemaUniverse.Data.Repositories
 {
     public class EfDbSetWrapper<T> : IEfDbSetWrapper<T>
-        where T : class, IDeletable
+        where T : class , IDeletable
     {
         private readonly CinemaSqlDbContext context;
 
@@ -31,6 +31,15 @@ namespace TRan.CinemaUniverse.Data.Repositories
             get
             {
                 return this.context.Set<T>();
+            }
+        }
+
+        public IQueryable<T> Deleted
+        {
+            get
+            {
+                return this.context.Set<T>()
+                    .Where(x => x.IsDeleted);
             }
         }
 
@@ -75,13 +84,13 @@ namespace TRan.CinemaUniverse.Data.Repositories
             entry.State = EntityState.Modified;
         }
 
-        public void Delete(T entity)
+        public void Delete(Guid id)
         {
+            var entity = GetById(id);
             entity.IsDeleted = true;
             entity.DeletedOn = DateTime.Now;
 
-            var entry = this.context.Entry(entity);
-            entry.State = EntityState.Modified;
+            Update(entity);
         }
     }
 }

@@ -12,6 +12,8 @@ namespace TRan.CinemaUniverse.Models
         [Required]
         public DateTime StartTime { get; set; }
 
+        public int Duration { get; set; }
+
         [Required]
         public Guid MovieId { get; set; }
 

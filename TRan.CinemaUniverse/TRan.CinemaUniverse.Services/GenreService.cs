@@ -30,15 +30,36 @@ namespace TRan.CinemaUniverse.Services
             return this.genreWrapper.All;
         }
 
+        public IQueryable<Genre> GetAllAndDeleted()
+        {
+            return this.genreWrapper.AllAndDeleted;
+        }
+
+        public IQueryable<Genre> GetDeleted()
+        {
+            return this.genreWrapper.Deleted;
+        }
+
         public void Add(Genre genre)
         {
             this.genreWrapper.Add(genre);
             this.context.Commit();
         }
 
+        public Genre GetById(Guid id)
+        {
+            return this.genreWrapper.GetById(id);
+        }
+
         public void Update(Genre genre)
         {
             this.genreWrapper.Update(genre);
+            this.context.Commit();
+        }
+
+        public void Delete(Guid id)
+        {
+            this.genreWrapper.Delete(id);
             this.context.Commit();
         }
     }

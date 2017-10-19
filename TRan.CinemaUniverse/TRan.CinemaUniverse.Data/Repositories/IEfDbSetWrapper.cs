@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
+using TRan.CinemaUniverse.Models.Contracts;
 
 namespace TRan.CinemaUniverse.Data.Repositories
 {
     public interface IEfDbSetWrapper<T>
-        where T : class
+        where T : class, IDeletable
     {
         IQueryable<T> All { get; }
 
         IQueryable<T> AllAndDeleted { get; }
+
+        IQueryable<T> Deleted { get; }
 
         IQueryable<T> AllWithInclude<TProperty>(Expression<Func<T, TProperty>> includeExpression);
 
@@ -19,6 +22,6 @@ namespace TRan.CinemaUniverse.Data.Repositories
 
         void Update(T entity);
 
-        void Delete(T entity);
+        void Delete(Guid id);
     }
 }
