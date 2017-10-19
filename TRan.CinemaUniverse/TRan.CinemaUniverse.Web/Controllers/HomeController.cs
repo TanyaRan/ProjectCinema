@@ -9,18 +9,18 @@ namespace TRan.CinemaUniverse.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IMoviesService moviesService;
+        private readonly IMovieService movieService;
         private readonly IMapper mapper;
 
-        public HomeController(IMoviesService moviesService, IMapper mapper)
+        public HomeController(IMovieService movieService, IMapper mapper)
         {
-            this.moviesService = moviesService;
+            this.movieService = movieService;
             this.mapper = mapper;
         }
 
         public ActionResult Index()
         {
-            var movies = this.moviesService
+            var movies = this.movieService
                 .GetAll()
                 .ProjectTo<MovieViewModel>()
                 .ToList();
@@ -36,7 +36,7 @@ namespace TRan.CinemaUniverse.Web.Controllers
         [HttpPost]
         public ActionResult Index(MovieViewModel model)
         {
-            // this.moviesService.Update();
+            // this.movieService.Update();
 
             return RedirectToAction("About");
         }

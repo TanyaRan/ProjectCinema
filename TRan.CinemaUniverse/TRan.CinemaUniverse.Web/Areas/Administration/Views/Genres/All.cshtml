@@ -1,0 +1,10 @@
+﻿@using TRan.CinemaUniverse.Web.Areas.Administration.ViewModels
+@model IEnumerable<GenreViewModel>
+
+<h2>All</h2>
+
+@foreach (var genre in Model)
+{
+    <p>@genre.Name</p>
+}
+
