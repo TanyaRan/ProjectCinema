@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TRan.CinemaUniverse.Data.SaveContext
+﻿namespace TRan.CinemaUniverse.Data.SaveContext
 {
     public class EfSaveContext : IEfSaveContext
     {
@@ -15,7 +9,7 @@ namespace TRan.CinemaUniverse.Data.SaveContext
             this.context = context;
         }
 
-        public void Complete()
+        public void Commit()
         {
             this.context.SaveChanges();
         }

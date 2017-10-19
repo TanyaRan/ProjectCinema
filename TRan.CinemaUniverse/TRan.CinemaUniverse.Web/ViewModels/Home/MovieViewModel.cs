@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using AutoMapper;
+﻿using AutoMapper;
 using TRan.CinemaUniverse.Models;
 using TRan.CinemaUniverse.Web.Infrastructure;
 
-namespace TRan.CinemaUniverse.Web.Models.Home
+namespace TRan.CinemaUniverse.Web.ViewModels.Home
 {
     public class MovieViewModel : IMapFrom<Movie>, IHaveCustomMappings
     {

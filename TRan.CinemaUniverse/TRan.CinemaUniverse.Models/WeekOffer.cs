@@ -21,6 +21,8 @@ namespace TRan.CinemaUniverse.Models
         [Required]
         public DateTime StartDate { get; set; }
 
+        public DateTime EndDate { get; set; }
+
         public virtual ICollection<Projection> Projections
         {
             get

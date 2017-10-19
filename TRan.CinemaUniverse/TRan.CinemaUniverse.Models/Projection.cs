@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TRan.CinemaUniverse.Models.Abstract;
 
 namespace TRan.CinemaUniverse.Models
@@ -16,7 +12,10 @@ namespace TRan.CinemaUniverse.Models
         [Required]
         public DateTime StartTime { get; set; }
 
-        public Guid? MovieId { get; set; }
+        public int Duration { get; set; }
+
+        [Required]
+        public Guid MovieId { get; set; }
 
         public virtual Movie Movie { get; set; }
 

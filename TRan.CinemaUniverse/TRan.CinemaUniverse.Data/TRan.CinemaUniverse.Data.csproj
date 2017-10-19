@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bytes2you.Validation, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a7d501dd757e0442, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bytes2you.Validation.2.0.0.0\lib\portable-win+net40+sl40+wp+Xbox40\Bytes2you.Validation.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -74,6 +77,14 @@
     <Compile Include="Migrations\201710160824455_ChangeProjection_ChangeMovie.Designer.cs">
       <DependentUpon>201710160824455_ChangeProjection_ChangeMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710180758009_AddEndDate_to_Projection.cs" />
+    <Compile Include="Migrations\201710180758009_AddEndDate_to_Projection.Designer.cs">
+      <DependentUpon>201710180758009_AddEndDate_to_Projection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710190930316_AddProjectionDuration.cs" />
+    <Compile Include="Migrations\201710190930316_AddProjectionDuration.Designer.cs">
+      <DependentUpon>201710190930316_AddProjectionDuration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EfDbSetWrapper.cs" />
@@ -106,6 +117,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710160824455_ChangeProjection_ChangeMovie.resx">
       <DependentUpon>201710160824455_ChangeProjection_ChangeMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710180758009_AddEndDate_to_Projection.resx">
+      <DependentUpon>201710180758009_AddEndDate_to_Projection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710190930316_AddProjectionDuration.resx">
+      <DependentUpon>201710190930316_AddProjectionDuration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

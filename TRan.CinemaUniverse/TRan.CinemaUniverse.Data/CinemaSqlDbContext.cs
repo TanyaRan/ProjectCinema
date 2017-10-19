@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using TRan.CinemaUniverse.Models;
 using TRan.CinemaUniverse.Models.Contracts;
@@ -24,8 +25,6 @@ namespace TRan.CinemaUniverse.Data
         public IDbSet<Movie> Movies { get; set; }
         public IDbSet<WeekOffer> WeekOffers { get; set; }
 
-
-
         public override int SaveChanges()
         {
             this.ApplyAuditInfoRules();
@@ -38,7 +37,8 @@ namespace TRan.CinemaUniverse.Data
                 this.ChangeTracker.Entries()
                     .Where(
                         e =>
-                        e.Entity is IAuditable && ((e.State == EntityState.Added) || (e.State == EntityState.Modified))))
+                        e.Entity is IAuditable &&
+                        ((e.State == EntityState.Added) || (e.State == EntityState.Modified))))
             {
                 var entity = (IAuditable)entry.Entity;
                 if (entry.State == EntityState.Added && entity.CreatedOn == default(DateTime))

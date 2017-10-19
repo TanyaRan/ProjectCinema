@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Web;
 using TRan.CinemaUniverse.Web.Infrastructure;
 
 namespace TRan.CinemaUniverse.Web.App_Start
