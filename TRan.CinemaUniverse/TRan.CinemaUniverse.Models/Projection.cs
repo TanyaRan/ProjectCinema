@@ -12,6 +12,7 @@ namespace TRan.CinemaUniverse.Models
         [Required]
         public DateTime StartTime { get; set; }
 
+        [Range(100, 180)]
         public int Duration { get; set; }
 
         [Required]
@@ -19,7 +20,8 @@ namespace TRan.CinemaUniverse.Models
 
         public virtual Movie Movie { get; set; }
 
-        public Guid? LecturerId { get; set; }
+        [Required]
+        public Guid LecturerId { get; set; }
 
         public virtual User Lecturer { get; set; }
     }

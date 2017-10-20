@@ -51,6 +51,9 @@ namespace TRan.CinemaUniverse.Data.Migrations
                 userManager.Create(lecturer, LecturerPassword);
 
                 userManager.AddToRole(lecturer.Id, "Lecturer");
+
+                role = new IdentityRole { Name = "User" };
+                roleManager.Create(role);
             }
         }
 

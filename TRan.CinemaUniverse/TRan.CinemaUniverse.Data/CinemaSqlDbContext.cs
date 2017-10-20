@@ -23,6 +23,7 @@ namespace TRan.CinemaUniverse.Data
 
         public IDbSet<Genre> Genres { get; set; }
         public IDbSet<Movie> Movies { get; set; }
+        public IDbSet<Projection> Projections { get; set; }
         public IDbSet<WeekOffer> WeekOffers { get; set; }
 
         public override int SaveChanges()

@@ -1,9 +1,6 @@
 ﻿using Bytes2you.Validation;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TRan.CinemaUniverse.Data.Repositories;
 using TRan.CinemaUniverse.Data.SaveContext;
 using TRan.CinemaUniverse.Models;
@@ -42,6 +39,8 @@ namespace TRan.CinemaUniverse.Services
 
         public void Add(Genre genre)
         {
+            Guard.WhenArgument(genre, "genre").IsNull().Throw();
+
             this.genreWrapper.Add(genre);
             this.context.Commit();
         }
@@ -53,6 +52,8 @@ namespace TRan.CinemaUniverse.Services
 
         public void Update(Genre genre)
         {
+            Guard.WhenArgument(genre, "genre").IsNull().Throw();
+
             this.genreWrapper.Update(genre);
             this.context.Commit();
         }

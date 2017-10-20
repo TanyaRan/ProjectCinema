@@ -15,7 +15,7 @@ namespace TRan.CinemaUniverse.Models
         }
 
         [Required]
-        [StringLength(50, MinimumLength = 2)]
+        [StringLength(50, MinimumLength = 3)]
         [Index(IsUnique = true)]
         public string Name { get; set; }
 

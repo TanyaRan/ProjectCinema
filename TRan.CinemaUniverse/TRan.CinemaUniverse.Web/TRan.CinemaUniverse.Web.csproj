@@ -224,8 +224,15 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\GenresController.cs" />
+    <Compile Include="Areas\Administration\Controllers\MoviesController.cs" />
     <Compile Include="Areas\Administration\ViewModels\Genres\GenreCreateViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Genres\GenreEditViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Movies\MovieCreateViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Movies\MovieEditViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Projections\ProjectionEditViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Projections\ProjectionCreateViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\WeekOffers\WeekOfferCreateViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\WeekOffers\WeekOfferEditViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -344,9 +351,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\ViewModels\Movies\" />
-    <Folder Include="Areas\Administration\ViewModels\Projections\" />
-    <Folder Include="Areas\Administration\ViewModels\WeekOffers\" />
+    <Folder Include="Areas\Administration\Views\Movies\" />
+    <Folder Include="Areas\Administration\Views\Projections\" />
+    <Folder Include="Areas\Administration\Views\WeekOffers\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

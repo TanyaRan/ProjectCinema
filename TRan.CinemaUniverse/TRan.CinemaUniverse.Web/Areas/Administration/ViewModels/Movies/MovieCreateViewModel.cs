@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using AutoMapper;
+using TRan.CinemaUniverse.Models;
+using TRan.CinemaUniverse.Web.Infrastructure;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using TRan.CinemaUniverse.Models.Abstract;
 
-namespace TRan.CinemaUniverse.Models
+namespace TRan.CinemaUniverse.Web.Areas.Administration.ViewModels.Movies
 {
-    public class Movie : DataModel
+    public class MovieCreateViewModel : IMapFrom<Movie>, IHaveCustomMappings
     {
         [Required]
         [StringLength(100, MinimumLength = 3)]
@@ -23,6 +27,8 @@ namespace TRan.CinemaUniverse.Models
         [StringLength(300, MinimumLength = 3)]
         public string ImageUrl { get; set; }
 
+        public string Genre { get; set; }
+
         [StringLength(100, MinimumLength = 3)]
         public string StarActor { get; set; }
 
@@ -35,8 +41,10 @@ namespace TRan.CinemaUniverse.Models
         [StringLength(3000, MinimumLength = 10)]
         public string FilmingStory { get; set; }
 
-        public Guid? GenreId { get; set; }
-
-        public virtual Genre Genre { get; set; }
+        public void CreateMappings(IMapperConfigurationExpression configuration)
+        {
+            configuration.CreateMap<Movie, MovieCreateViewModel>()
+                .ForMember(movieVM => movieVM.Genre, cfg => cfg.MapFrom(movie => movie.Genre.Name));
+        }
     }
 }

@@ -48,10 +48,14 @@
   <ItemGroup>
     <Compile Include="Contracts\IGenreService.cs" />
     <Compile Include="Contracts\IMovieService.cs" />
+    <Compile Include="Contracts\IProjectionService.cs" />
     <Compile Include="Contracts\IService.cs" />
+    <Compile Include="Contracts\IWeekOfferService.cs" />
     <Compile Include="GenreService.cs" />
     <Compile Include="MovieService.cs" />
+    <Compile Include="ProjectionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WeekOfferService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TRan.CinemaUniverse.Data\TRan.CinemaUniverse.Data.csproj">
