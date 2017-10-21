@@ -34,8 +34,9 @@ namespace TRan.CinemaUniverse.Web.Areas.Administration.Controllers
         {
             var movies = this.movieService
                 .GetAll()
-                .ProjectTo<MovieCreateViewModel>()
+                .ProjectTo<IndexMovieViewModel>()
                 .ToList();
+
             int pageNumber = (page ?? 1);
             int pageSize = 5;
 

@@ -23,6 +23,7 @@ namespace TRan.CinemaUniverse.Models
 
         [Required]
         [StringLength(2500, MinimumLength = 10)]
+        [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
         [Required]
@@ -37,6 +38,7 @@ namespace TRan.CinemaUniverse.Models
         public string Award { get; set; }
 
         [StringLength(3000, MinimumLength = 10)]
+        [DataType(DataType.MultilineText)]
         public string FilmingStory { get; set; }
 
         public Guid? GenreId { get; set; }

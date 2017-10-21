@@ -14,6 +14,7 @@ namespace TRan.CinemaUniverse.Web.Areas.Administration.ViewModels.Genres
     {
         [Required]
         [StringLength(50, MinimumLength = 2)]
+        [Index(IsUnique = true)]
         public string Name { get; set; }
     }
 }

@@ -228,8 +228,10 @@
     <Compile Include="Areas\Administration\Controllers\MoviesController.cs" />
     <Compile Include="Areas\Administration\ViewModels\Actors\ActorCreateViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Actors\ActorEditViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Actors\IndexActorsViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Genres\GenreCreateViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Genres\GenreEditViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Movies\IndexMovieViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Movies\MovieCreateViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Movies\MovieEditViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Projections\ProjectionEditViewModel.cs" />
@@ -296,6 +298,8 @@
     <Content Include="Areas\Administration\Views\Genres\Edit.cshtml" />
     <Content Include="Areas\Administration\Views\Genres\Delete.cshtml" />
     <Content Include="Areas\Administration\Views\Actors\All.cshtml" />
+    <Content Include="Areas\Administration\Views\Movies\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Movies\All.cshtml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -355,7 +359,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Views\Movies\" />
     <Folder Include="Areas\Administration\Views\Projections\" />
     <Folder Include="Areas\Administration\Views\WeekOffers\" />
   </ItemGroup>

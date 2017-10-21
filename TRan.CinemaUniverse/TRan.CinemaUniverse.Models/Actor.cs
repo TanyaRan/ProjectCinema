@@ -22,6 +22,7 @@ namespace TRan.CinemaUniverse.Models
         public string ImageUrl { get; set; }
 
         [StringLength(3000, MinimumLength = 10)]
+        [DataType(DataType.MultilineText)]
         public string Filmography { get; set; }
 
         public virtual ICollection<Movie> Movies

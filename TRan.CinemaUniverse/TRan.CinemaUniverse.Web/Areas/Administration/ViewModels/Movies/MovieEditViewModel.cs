@@ -31,12 +31,6 @@ namespace TRan.CinemaUniverse.Web.Areas.Administration.ViewModels.Movies
 
         public string Genre { get; set; }
 
-        [StringLength(100, MinimumLength = 2)]
-        public string StarActor { get; set; }
-
-        [StringLength(100, MinimumLength = 2)]
-        public string StarActress { get; set; }
-
         [StringLength(100, MinimumLength = 10)]
         public string Award { get; set; }
 

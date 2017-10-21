@@ -1,0 +1,58 @@
+﻿@using TRan.CinemaUniverse.Web.Areas.Administration.ViewModels.Movies
+@model PagedList.IPagedList<MovieEditViewModel>
+@using PagedList.Mvc;
+@section stylelibs {
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+}
+
+@{
+    var action = ViewContext.RouteData.GetRequiredString("action").ToLower();
+}
+@if (action == "all")
+{
+    <h2>All</h2>
+    <p>
+        @Html.ActionLink("Create New", "Create", "Movies")
+    </p>
+}
+else
+{
+    <h2>Deleted</h2>
+}
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Director</th>
+        <th>Description</th>
+        <th></th>
+    </tr>
+    @foreach (var movie in Model)
+    {
+
+        <tr>
+            <td>@movie.Title</td>
+            <td>
+                <img src="@movie.ImageUrl" alt="@movie.Title" style="max-width:100px" />
+            </td>
+            <td>@movie.Director</td>
+            <td>@movie.Description</td>
+            <td>
+                @if (action == "all")
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = movie.Id })
+                    @Html.ActionLink("Delete", "Delete", new { id = movie.Id })
+                }
+            </td>
+        </tr>
+    }
+</table>
+
+<div class="text-center">
+    @*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount*@
+
+    @Html.PagedListPager(Model, page => Url.Action("All",
+        new { page }))
+</div>
+

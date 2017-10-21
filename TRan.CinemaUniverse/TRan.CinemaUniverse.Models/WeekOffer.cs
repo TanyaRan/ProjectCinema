@@ -19,8 +19,10 @@ namespace TRan.CinemaUniverse.Models
         public string Theme { get; set; }
 
         [Required]
+        [DataType(DataType.DateTime)]
         public DateTime StartDate { get; set; }
 
+        [DataType(DataType.DateTime)]
         public DateTime EndDate { get; set; }
 
         public virtual ICollection<Projection> Projections

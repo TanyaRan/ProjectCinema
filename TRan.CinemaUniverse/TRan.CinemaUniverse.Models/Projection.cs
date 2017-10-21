@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using TRan.CinemaUniverse.Models.Abstract;
 
 namespace TRan.CinemaUniverse.Models
@@ -7,12 +8,15 @@ namespace TRan.CinemaUniverse.Models
     public class Projection : DataModel
     {
         [Required]
+        [DataType(DataType.Date)]
         public DateTime Day { get; set; }
 
         [Required]
+        [DataType(DataType.Time)]
         public DateTime StartTime { get; set; }
 
         [Range(100, 180)]
+        [DataType(DataType.Duration)]
         public int Duration { get; set; }
 
         [Required]
@@ -24,5 +28,9 @@ namespace TRan.CinemaUniverse.Models
         public Guid LecturerId { get; set; }
 
         public virtual User Lecturer { get; set; }
+
+        public Guid? WeekOfferId { get; set; }
+
+        public WeekOffer WeekOffer { get; set; }
     }
 }
