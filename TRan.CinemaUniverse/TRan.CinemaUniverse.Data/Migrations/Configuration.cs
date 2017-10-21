@@ -20,6 +20,7 @@ namespace TRan.CinemaUniverse.Data.Migrations
         {
             this.SeedAdmin(context);
             this.SeedGenres(context);
+            this.SeedActors(context);
             this.SeedMovies(context);
         }
 
@@ -78,6 +79,30 @@ namespace TRan.CinemaUniverse.Data.Migrations
 
                 genre = new Genre() { Name = "Adventure" };
                 context.Genres.Add(genre);
+            }
+        }
+
+        private void SeedActors(CinemaSqlDbContext context)
+        {
+            if (!context.Actors.Any())
+            {
+                var actor = new Actor() { Name = "Tom Hanks", ImageUrl = "https://cdn.amctheatres.com/production/2/cast-crew/33400/33430/profile/a14CNByTYALAPSGlwlmfHILpEIW.jpg" };
+                context.Actors.Add(actor);
+
+                actor = new Actor() { Name = "Julia Roberts", ImageUrl = "https://en.wikipedia.org/wiki/Julia_Roberts_filmography#/media/File:Julia_Roberts_2011_Shankbone_3.JPG" };
+                context.Actors.Add(actor);
+
+                actor = new Actor() { Name = "Johny Depp", ImageUrl = "http://www.moviescene.nl/ckfinder/userfiles/images/Moviescene/berichten/2014/april/johny-depp.jpg" };
+                context.Actors.Add(actor);
+
+                actor = new Actor() { Name = "Sandra Bullok", ImageUrl = "https://static1.squarespace.com/static/5732285a9f72668963041be2/t/5744add1e321402cfdf9baa2/1464118747940/" };
+                context.Actors.Add(actor);
+
+                actor = new Actor() { Name = "Hugh Grant", ImageUrl = "https://24smi.org/public/media/news/2015/03/10/1425990628-hyu-grant.jpg" };
+                context.Actors.Add(actor);
+
+                actor = new Actor() { Name = "Meryl Streep", ImageUrl = "https://images-production.global.ssl.fastly.net/uploads/photos/file/227663/most-oscars-meryl-streep.jpg?auto=compress&crop=top&fit=clip&h=500&q=55&w=698" };
+                context.Actors.Add(actor);
             }
         }
 

@@ -8,12 +8,10 @@ namespace TRan.CinemaUniverse.Models
     public class WeekOffer : DataModel
     {
         private ICollection<Projection> projections;
-        private ICollection<Movie> movies;
 
         public WeekOffer()
         {
             this.projections = new HashSet<Projection>();
-            this.movies = new HashSet<Movie>();
         }
 
         [Required]
@@ -34,18 +32,6 @@ namespace TRan.CinemaUniverse.Models
             set
             {
                 this.projections = value;
-            }
-        }
-
-        public virtual ICollection<Movie> Movies
-        {
-            get
-            {
-                return this.movies;
-            }
-            set
-            {
-                this.movies = value;
             }
         }
     }

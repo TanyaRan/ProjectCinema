@@ -223,8 +223,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\ActorsController.cs" />
     <Compile Include="Areas\Administration\Controllers\GenresController.cs" />
     <Compile Include="Areas\Administration\Controllers\MoviesController.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Actors\ActorCreateViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Actors\ActorEditViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Genres\GenreCreateViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Genres\GenreEditViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Movies\MovieCreateViewModel.cs" />
@@ -292,6 +295,7 @@
     <Content Include="Areas\Administration\Views\Genres\All.cshtml" />
     <Content Include="Areas\Administration\Views\Genres\Edit.cshtml" />
     <Content Include="Areas\Administration\Views\Genres\Delete.cshtml" />
+    <Content Include="Areas\Administration\Views\Actors\All.cshtml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

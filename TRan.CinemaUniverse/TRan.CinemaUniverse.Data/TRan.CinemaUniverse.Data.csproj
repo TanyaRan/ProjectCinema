@@ -97,6 +97,14 @@
     <Compile Include="Migrations\201710202040224_AddToWeekOfferCollectionMovies.Designer.cs">
       <DependentUpon>201710202040224_AddToWeekOfferCollectionMovies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710211915383_CreateTableActors.cs" />
+    <Compile Include="Migrations\201710211915383_CreateTableActors.Designer.cs">
+      <DependentUpon>201710211915383_CreateTableActors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710211918543_CreateTableActors1.cs" />
+    <Compile Include="Migrations\201710211918543_CreateTableActors1.Designer.cs">
+      <DependentUpon>201710211918543_CreateTableActors1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EfDbSetWrapper.cs" />
@@ -144,6 +152,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710202040224_AddToWeekOfferCollectionMovies.resx">
       <DependentUpon>201710202040224_AddToWeekOfferCollectionMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710211915383_CreateTableActors.resx">
+      <DependentUpon>201710211915383_CreateTableActors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710211918543_CreateTableActors1.resx">
+      <DependentUpon>201710211918543_CreateTableActors1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActorService.cs" />
+    <Compile Include="Contracts\IActorService.cs" />
     <Compile Include="Contracts\IGenreService.cs" />
     <Compile Include="Contracts\IMovieService.cs" />
     <Compile Include="Contracts\IProjectionService.cs" />
