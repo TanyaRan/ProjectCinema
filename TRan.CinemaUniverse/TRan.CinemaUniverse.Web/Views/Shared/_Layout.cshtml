@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using TRan.CinemaUniverse.Common
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -40,5 +42,19 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    @if (TempData[MainConstants.Success] != null)
+    {
+        <script>
+            toastr.options.closeOnHover = true;
+            toastr.success("@TempData[MainConstants.Success]")
+        </script>
+    }
+    else if (TempData[MainConstants.Error] != null)
+    {
+        <script>
+            toastr.error("@TempData[MainConstants.Error]")
+        </script>
+    }
 </body>
 </html>

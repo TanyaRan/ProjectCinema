@@ -238,6 +238,9 @@
     <Compile Include="Areas\Administration\ViewModels\Projections\ProjectionCreateViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\WeekOffers\WeekOfferCreateViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\WeekOffers\WeekOfferEditViewModel.cs" />
+    <Compile Include="Areas\Profile\Controllers\CommentsController.cs" />
+    <Compile Include="Areas\Profile\ProfileAreaRegistration.cs" />
+    <Compile Include="Areas\Profile\ViewModels\Comments\CommentCreateViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -274,8 +277,13 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -300,6 +308,16 @@
     <Content Include="Areas\Administration\Views\Actors\All.cshtml" />
     <Content Include="Areas\Administration\Views\Movies\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Movies\All.cshtml" />
+    <Content Include="Areas\Profile\Views\web.config" />
+    <Content Include="Areas\Profile\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Profile\Views\Comments\Create.cshtml" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -317,6 +335,8 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -361,6 +381,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Views\Projections\" />
     <Folder Include="Areas\Administration\Views\WeekOffers\" />
+    <Folder Include="Areas\Profile\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

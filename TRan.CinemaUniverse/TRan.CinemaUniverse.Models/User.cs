@@ -13,10 +13,12 @@ namespace TRan.CinemaUniverse.Models
     public class User : IdentityUser, IAuditable, IDeletable
     {
         private ICollection<Projection> projections;
+        private ICollection<Comment> comments;
 
         public User()
         {
             this.projections = new HashSet<Projection>();
+            this.comments = new HashSet<Comment>();
         }
 
         [Index]
@@ -32,6 +34,8 @@ namespace TRan.CinemaUniverse.Models
         public DateTime? ModifiedOn { get; set; }
 
         public virtual ICollection<Projection> Projections { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {

@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace TRan.CinemaUniverse.Common
 {
-    public class GlobalConstants
+    public class MainConstants
     {
-        public const string SuccessMessage = "Success";
-        public const string ErrorMessage = "Error";
+        // toastr
+        public const string Success = "Success";
+        public const string Error = "Error";
+
     }
 }

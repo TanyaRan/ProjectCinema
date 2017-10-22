@@ -26,6 +26,7 @@ namespace TRan.CinemaUniverse.Data
         public IDbSet<Actor> Actors { get; set; }
         public IDbSet<Projection> Projections { get; set; }
         public IDbSet<WeekOffer> WeekOffers { get; set; }
+        public IDbSet<Comment> Comments { get; set; }
 
         public override int SaveChanges()
         {

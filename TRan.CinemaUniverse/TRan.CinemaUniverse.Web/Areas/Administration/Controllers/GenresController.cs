@@ -66,12 +66,13 @@ namespace TRan.CinemaUniverse.Web.Areas.Administration.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(GenreCreateViewModel model)
         {
-            if (this.ModelState.IsValid)
+            if (!this.ModelState.IsValid)
             {
-                var genre = this.mapper.Map<Genre>(model);
-
-                this.genreService.Add(genre);
+                return this.View(model);
             }
+
+            var genre = this.mapper.Map<Genre>(model);
+            this.genreService.Add(genre);
 
             // this.TempData[GlobalConstants.SuccessMessage] = string.Format("Genre {0} added successfully!", model.Name);
 
@@ -97,11 +98,13 @@ namespace TRan.CinemaUniverse.Web.Areas.Administration.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(GenreEditViewModel model)
         {
-            if (this.ModelState.IsValid)
+            if (!this.ModelState.IsValid)
             {
-                var genre = this.mapper.Map<Genre>(model);
-                this.genreService.Update(genre);
+                return this.View(model);
             }
+
+            var genre = this.mapper.Map<Genre>(model);
+            this.genreService.Update(genre);
 
             return this.RedirectToAction("All", "Genres", new { area = "administration" });
         }
