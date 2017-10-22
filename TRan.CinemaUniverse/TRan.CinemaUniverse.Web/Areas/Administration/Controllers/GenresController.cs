@@ -68,13 +68,14 @@ namespace TRan.CinemaUniverse.Web.Areas.Administration.Controllers
         {
             if (!this.ModelState.IsValid)
             {
+                this.TempData[MainConstants.Error] = "Genre addition failed!";
                 return this.View(model);
             }
 
             var genre = this.mapper.Map<Genre>(model);
             this.genreService.Add(genre);
 
-            // this.TempData[GlobalConstants.SuccessMessage] = string.Format("Genre {0} added successfully!", model.Name);
+            this.TempData[MainConstants.Success] = string.Format("Genre {0} added successfully!", model.Name);
 
             return this.RedirectToAction("All", "Genres", new { area = "administration" });
         }

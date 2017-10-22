@@ -1,10 +1,13 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Bytes2you.Validation;
 using Microsoft.AspNet.Identity;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Caching;
 using System.Web.Mvc;
 using TRan.CinemaUniverse.Common;
 using TRan.CinemaUniverse.Models;
@@ -27,9 +30,20 @@ namespace TRan.CinemaUniverse.Web.Areas.Profile.Controllers
             this.mapper = mapper;
         }
 
-        public ActionResult Index()
+        [HttpGet]
+        public ActionResult Index(int? page)
         {
-            return View();
+            int pageNumber = (page ?? 1);
+            int itemsPerPage = 4;
+
+            var comments = this.commentService
+                .GetAll()
+                .OrderByDescending(x => x.CreatedOn)
+                .ThenBy(x => x.AuthorId)
+                .ProjectTo<CommentViewModel>()
+                .ToList();
+
+            return View(comments.ToPagedList(pageNumber, itemsPerPage));
         }
 
         [HttpGet]
@@ -53,13 +67,14 @@ namespace TRan.CinemaUniverse.Web.Areas.Profile.Controllers
             if (this.User.Identity.IsAuthenticated)
             {
                 comment.AuthorId = this.User.Identity.GetUserId();
+                comment.CreatedOn = DateTime.Now;
             }
-            
+
             this.commentService.Add(comment);
 
             this.TempData[MainConstants.Success] = string.Format("Comment {0} added successfully!", model.Title);
 
-            return this.RedirectToAction("Index", "Home", new { area = "" });
+            return this.RedirectToAction("Index", "Comments", new { area = "profile" });
         }
     }
 }

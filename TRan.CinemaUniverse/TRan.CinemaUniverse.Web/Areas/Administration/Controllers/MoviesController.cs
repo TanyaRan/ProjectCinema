@@ -38,7 +38,20 @@ namespace TRan.CinemaUniverse.Web.Areas.Administration.Controllers
                 .ToList();
 
             int pageNumber = (page ?? 1);
-            int pageSize = 5;
+            int pageSize = 4;
+
+            return View(movies.ToPagedList(pageNumber, pageSize));
+        }
+
+        public ActionResult All(int? page)
+        {
+            var movies = this.movieService
+                .GetAll()
+                .ProjectTo<MovieEditViewModel>()
+                .ToList();
+
+            int pageNumber = (page ?? 1);
+            int pageSize = 4;
 
             return View(movies.ToPagedList(pageNumber, pageSize));
         }

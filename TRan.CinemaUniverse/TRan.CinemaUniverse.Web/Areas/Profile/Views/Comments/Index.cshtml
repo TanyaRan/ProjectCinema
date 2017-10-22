@@ -1,0 +1,34 @@
+﻿@using TRan.CinemaUniverse.Web.Areas.Profile.ViewModels.Comments
+@model PagedList.IPagedList<CommentViewModel>
+@using PagedList.Mvc;
+@section stylelibs {
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+}
+@{
+    ViewBag.Title = "All Comments";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table class="table table-hover table-responsive">
+    <tr>
+        <th>Author</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Created On</th>
+    </tr>
+    @foreach (var comment in Model)
+    {
+        <tr>
+            <th>@comment.Author</th>
+            <td>@comment.Title</td>
+            <td>@comment.Content</td>
+            <td>@comment.CreatedOn</td>
+        </tr>
+    }
+</table>
+
+<div class="text-center">
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page }))
+</div>

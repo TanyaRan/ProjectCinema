@@ -11,7 +11,7 @@
     @RenderSection("stylelibs", required: false)
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -23,9 +23,29 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" })</li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li>@Html.ActionLink("Users", "All", "Users", new { area = "Administration" }, null)</li>
+                        <li>@Html.ActionLink("Projections", "All", "Projections", new { area = "Administration" }, null)</li>
+                        <li>@Html.ActionLink("WeekOffers", "All", "WeekOffers", new { area = "Administration" }, null)</li>
+                    }
+                    @if (User.IsInRole("Admin") || User.IsInRole("Lecturer"))
+                    {
+                        <li>@Html.ActionLink("Genres", "All", "Genres", new { area = "Administration" }, null)</li>
+                        <li>@Html.ActionLink("Movies", "All", "Movies", new { area = "Administration" }, null)</li>
+
+                        <li>@Html.ActionLink("Actors", "All", "Actors", new { area = "Administration" }, null)</li>
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Comments", "Index", "Comments", new { area = "Profile" }, null)</li>
+                    }
+                    @if (!User.IsInRole("Admin") && !User.IsInRole("Lecturer"))
+                    {
+                        <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, null)</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

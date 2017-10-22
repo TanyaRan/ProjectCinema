@@ -1,0 +1,28 @@
+﻿@using TRan.CinemaUniverse.Web.ViewModels.DisplayMovies
+@model MovieFullViewModel
+
+<h2>@Html.DisplayFor(m => m.Title)</h2>
+<div class="row">
+    <div class="col-md-6">
+        <img src="@Model.ImageUrl" alt="Movie Picture" style="max-width:400px" />
+    </div>
+    <div class="col-md-6">
+        <p>
+            Director: @Html.DisplayFor(m => m.Director)
+            Award: @Html.DisplayFor(m => m.Award)
+            Genre: @Html.DisplayFor(m => m.Genre)
+        </p>
+        <p>@Html.DisplayFor(m => m.Description)</p>
+        <p>@Html.DisplayFor(m => m.FilmingStory)</p>
+    </div>
+</div>
+
+@foreach (var actor in Model.Actors)
+{
+    <div class="col-md-4">
+        <p>@actor.Name</p>
+        <img src="@actor.ImageUrl" alt="Actor" class="img-responsive img-thumbnail"style="max-height: 200px" />
+    </div>
+}
+
+
