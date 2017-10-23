@@ -1,5 +1,5 @@
 ﻿@using TRan.CinemaUniverse.Web.Areas.Administration.ViewModels.Movies
-@model PagedList.IPagedList<IndexMovieViewModel>
+@model PagedList.IPagedList<MovieEditViewModel>
 @using PagedList.Mvc;
 @section stylelibs {
     <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
@@ -27,14 +27,14 @@
                         <a href="#">@movie.Title</a>
                     </h4>
                 </div>
-                <div class="row">
+                @*<div class="row">
                     @foreach (var actor in movie.Actors)
                     {
                         <span class="label label-success">
                             @actor.Name
                         </span>
                     }
-                </div>
+                </div>*@
             </div>
         </div>
     }

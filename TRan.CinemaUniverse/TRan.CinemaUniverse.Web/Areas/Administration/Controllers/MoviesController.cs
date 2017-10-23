@@ -5,11 +5,13 @@ using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using TRan.CinemaUniverse.Models;
 using TRan.CinemaUniverse.Services.Contracts;
+using TRan.CinemaUniverse.Web.Areas.Administration.ViewModels.Genres;
 using TRan.CinemaUniverse.Web.Areas.Administration.ViewModels.Movies;
+using TRan.CinemaUniverse.Web.Areas.Administration.ViewModels.Actors;
+using TRan.CinemaUniverse.Common;
 
 namespace TRan.CinemaUniverse.Web.Areas.Administration.Controllers
 {
@@ -17,16 +19,19 @@ namespace TRan.CinemaUniverse.Web.Areas.Administration.Controllers
     {
         private readonly IMovieService movieService;
         private readonly IGenreService genreService;
+        private readonly IActorService actorService;
         private readonly IMapper mapper;
 
-        public MoviesController(IMovieService movieService, IGenreService genreService, IMapper mapper)
+        public MoviesController(IMovieService movieService, IGenreService genreService, IActorService actorService, IMapper mapper)
         {
             Guard.WhenArgument(movieService, "movieService").IsNull().Throw();
             Guard.WhenArgument(genreService, "genreService").IsNull().Throw();
+            Guard.WhenArgument(actorService, "actorService").IsNull().Throw();
             Guard.WhenArgument(mapper, "mapper").IsNull().Throw();
 
             this.movieService = movieService;
             this.genreService = genreService;
+            this.actorService = actorService;
             this.mapper = mapper;
         }
 
@@ -34,7 +39,7 @@ namespace TRan.CinemaUniverse.Web.Areas.Administration.Controllers
         {
             var movies = this.movieService
                 .GetAll()
-                .ProjectTo<IndexMovieViewModel>()
+                .ProjectTo<MovieEditViewModel>()
                 .ToList();
 
             int pageNumber = (page ?? 1);
@@ -72,7 +77,12 @@ namespace TRan.CinemaUniverse.Web.Areas.Administration.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            var movie = new MovieCreateViewModel();
+            var movie = new MovieCreateViewModel
+            {
+                GenresList = new SelectList(this.genreService.GetAll().ToList(), "Id", "Name"),
+                ActorsList = new SelectList(this.actorService.GetAll().ToList(), "Id", "Name"),
+                ActressesList = new SelectList(this.actorService.GetAll().ToList(), "Id", "Name")
+            };
 
             return View(movie);
         }
@@ -81,14 +91,17 @@ namespace TRan.CinemaUniverse.Web.Areas.Administration.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(MovieCreateViewModel model)
         {
-            if (this.ModelState.IsValid)
+            if (!this.ModelState.IsValid)
             {
-                var movie = this.mapper.Map<Movie>(model);
-
-                this.movieService.Add(movie);
+                this.TempData[MainConstants.Error] = "Movie addition failed!";
+                return this.View(model);
             }
 
-            // this.TempData[GlobalConstants.SuccessMessage] = string.Format("Movie {0} added successfully!", model.Name);
+            var movie = this.mapper.Map<Movie>(model);
+
+            this.movieService.Add(movie);
+
+            this.TempData[MainConstants.Success] = string.Format("Movie {0} added successfully!", model.Title);
 
             return this.RedirectToAction("All", "Movies", new { area = "administration" });
         }
@@ -146,6 +159,28 @@ namespace TRan.CinemaUniverse.Web.Areas.Administration.Controllers
             }
 
             return this.RedirectToAction("All", "Movies", new { area = "administration" });
+        }
+
+        private List<GenreEditViewModel> PopulateGenres(GenreEditViewModel model)
+        {
+            var genres = this.genreService
+            .GetAll()
+            .OrderBy(g => g.Name)
+            .ProjectTo<GenreEditViewModel>()
+            .ToList();
+
+            return genres;
+        }
+
+        private List<ActorInputViewModel> PopulateActors(ActorInputViewModel model)
+        {
+            var actors = this.actorService
+            .GetAll()
+            .OrderBy(a => a.Name)
+            .ProjectTo<ActorInputViewModel>()
+            .ToList();
+
+            return actors;
         }
     }
 }

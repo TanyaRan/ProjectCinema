@@ -7,7 +7,7 @@ using TRan.CinemaUniverse.Web.Infrastructure;
 
 namespace TRan.CinemaUniverse.Web.Areas.Administration.ViewModels.Actors
 {
-    public class IndexActorsViewModel : IMapFrom<Actor>
+    public class ActorInputViewModel : IMapFrom<Actor>
     {
         public Guid Id { get; set; }
 

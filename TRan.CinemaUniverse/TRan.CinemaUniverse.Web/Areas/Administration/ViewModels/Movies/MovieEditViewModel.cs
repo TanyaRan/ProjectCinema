@@ -9,38 +9,25 @@ using TRan.CinemaUniverse.Web.Infrastructure;
 
 namespace TRan.CinemaUniverse.Web.Areas.Administration.ViewModels.Movies
 {
-    public class MovieEditViewModel : IMapFrom<Movie>, IHaveCustomMappings
+    public class MovieEditViewModel : IMapFrom<Movie>
     {
         public Guid Id { get; set; }
 
-        [Required]
         [StringLength(100, MinimumLength = 2)]
         public string Title { get; set; }
 
-        [Required]
-        [StringLength(1000, MinimumLength = 10)]
+        [StringLength(2500, MinimumLength = 10)]
+        [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
-        [Required]
-        [StringLength(100, MinimumLength = 2)]
-        public string Director { get; set; }
-
-        [Required]
-        [StringLength(150, MinimumLength = 2)]
+        [StringLength(300, MinimumLength = 2)]
         public string ImageUrl { get; set; }
 
-        public string Genre { get; set; }
-
-        [StringLength(100, MinimumLength = 10)]
+        [StringLength(250, MinimumLength = 10)]
         public string Award { get; set; }
 
-        [StringLength(1000, MinimumLength = 10)]
+        [StringLength(3000, MinimumLength = 10)]
+        [DataType(DataType.MultilineText)]
         public string FilmingStory { get; set; }
-
-        public void CreateMappings(IMapperConfigurationExpression configuration)
-        {
-            configuration.CreateMap<Movie, MovieEditViewModel>()
-                .ForMember(movieVM => movieVM.Genre, cfg => cfg.MapFrom(movie => movie.Genre.Name));
-        }
     }
 }
