@@ -33,8 +33,7 @@ namespace TRan.CinemaUniverse.Models
 
         public virtual Movie Movie { get; set; }
 
-        [Required]
-        public Guid LecturerId { get; set; }
+        public string LecturerId { get; set; }
 
         public virtual User Lecturer { get; set; }
 

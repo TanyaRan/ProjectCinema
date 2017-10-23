@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TRan.CinemaUniverse.Common;
+using TRan.CinemaUniverse.Models;
 using TRan.CinemaUniverse.Services.Contracts;
 using TRan.CinemaUniverse.Web.Areas.Administration.ViewModels.Actors;
 
@@ -41,6 +43,32 @@ namespace TRan.CinemaUniverse.Web.Areas.Administration.Controllers
             int pageSize = 5;
 
             return View(actors.ToPagedList(pageNumber, pageSize));
+        }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            var actor = new ActorCreateViewModel();
+
+            return View(actor);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(ActorCreateViewModel model)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                this.TempData[MainConstants.Error] = "Actor addition failed!";
+                return this.View(model);
+            }
+
+            var genre = this.mapper.Map<Actor>(model);
+            this.actorService.Add(genre);
+
+            this.TempData[MainConstants.Success] = string.Format("Actor {0} added successfully!", model.Name);
+
+            return this.RedirectToAction("All", "Actors", new { area = "administration" });
         }
     }
 }

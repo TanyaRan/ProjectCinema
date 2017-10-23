@@ -15,6 +15,7 @@ using TRan.CinemaUniverse.Common;
 
 namespace TRan.CinemaUniverse.Web.Areas.Administration.Controllers
 {
+    [Authorize(Roles = "Admin, Lecturer")]
     public class MoviesController : Controller
     {
         private readonly IMovieService movieService;
@@ -98,7 +99,6 @@ namespace TRan.CinemaUniverse.Web.Areas.Administration.Controllers
             }
 
             var movie = this.mapper.Map<Movie>(model);
-
             this.movieService.Add(movie);
 
             this.TempData[MainConstants.Success] = string.Format("Movie {0} added successfully!", model.Title);

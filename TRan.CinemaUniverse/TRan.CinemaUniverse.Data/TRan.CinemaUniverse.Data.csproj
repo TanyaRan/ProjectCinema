@@ -121,6 +121,10 @@
     <Compile Include="Migrations\201710231424293_ChangeMovieModel.Designer.cs">
       <DependentUpon>201710231424293_ChangeMovieModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710231949319_ProjectionModelFix.cs" />
+    <Compile Include="Migrations\201710231949319_ProjectionModelFix.Designer.cs">
+      <DependentUpon>201710231949319_ProjectionModelFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EfDbSetWrapper.cs" />
@@ -186,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710231424293_ChangeMovieModel.resx">
       <DependentUpon>201710231424293_ChangeMovieModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710231949319_ProjectionModelFix.resx">
+      <DependentUpon>201710231949319_ProjectionModelFix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

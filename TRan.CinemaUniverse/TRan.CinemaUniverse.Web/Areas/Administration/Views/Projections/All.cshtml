@@ -1,0 +1,46 @@
+﻿@using TRan.CinemaUniverse.Web.Areas.Administration.ViewModels.Projections
+@model PagedList.IPagedList<ProjectionEditViewModel>
+@using PagedList.Mvc;
+@section stylelibs {
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+}
+@{
+    ViewBag.Title = "All Projections";
+}
+
+<h2>@ViewBag.Title</h2>
+<p>
+    @Html.ActionLink("Create New", "Create", "Projections")
+</p>
+
+<table class="table table-hover table-responsive">
+    <tr>
+        <th>Day</th>
+        <th>Start Time</th>
+        <th>Duration</th>
+        <th>Movie Title</th>
+        <th>Image</th>
+        <th></th>
+    </tr>
+    @foreach (var projection in Model)
+    {
+        <tr>
+            <th>@projection.Day</th>
+            <td>@projection.StartTime</td>
+            <td>@projection.Duration</td>
+            <td>@projection.MovieTitle</td>
+            <td>
+                <img src="@projection.MovieUrl" alt="@projection.MovieTitle" style="max-width:100px" />
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = projection.Id })
+                @Html.ActionLink("Delete", "Delete", new { id = projection.Id })
+            </td>
+        </tr>
+    }
+</table>
+
+<div class="text-center">
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page }))
+</div>

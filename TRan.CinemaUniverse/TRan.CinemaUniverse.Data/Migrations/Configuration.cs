@@ -30,6 +30,8 @@ namespace TRan.CinemaUniverse.Data.Migrations
             const string AdministratorPassword = "Admin1!";
 
             const string LecturerUserName = "lecturer@cinema.com";
+            const string Lecturer1UserName = "ivanov@cinema.com";
+            const string Lecturer2UserName = "petrov@cinema.com";
             const string LecturerPassword = "Lecturer1!";
 
             if (!context.Roles.Any())
@@ -50,7 +52,14 @@ namespace TRan.CinemaUniverse.Data.Migrations
                 roleManager.Create(role);
                 var lecturer = new User { UserName = LecturerUserName, Email = LecturerUserName, EmailConfirmed = true };
                 userManager.Create(lecturer, LecturerPassword);
+                userManager.AddToRole(lecturer.Id, "Lecturer");
 
+                lecturer = new User { UserName = Lecturer1UserName, Email = Lecturer1UserName, EmailConfirmed = true };
+                userManager.Create(lecturer, LecturerPassword);
+                userManager.AddToRole(lecturer.Id, "Lecturer");
+
+                lecturer = new User { UserName = Lecturer2UserName, Email = Lecturer1UserName, EmailConfirmed = true };
+                userManager.Create(lecturer, LecturerPassword);
                 userManager.AddToRole(lecturer.Id, "Lecturer");
 
                 role = new IdentityRole { Name = "User" };

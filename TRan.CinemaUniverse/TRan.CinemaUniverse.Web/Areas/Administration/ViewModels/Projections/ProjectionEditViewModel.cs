@@ -10,26 +10,26 @@ namespace TRan.CinemaUniverse.Web.Areas.Administration.ViewModels.Projections
     {
         public Guid Id { get; set; }
 
-        [Required]
         public DateTime Day { get; set; }
 
-        [Required]
+        [DataType(DataType.Time)]
         public DateTime StartTime { get; set; }
 
         [Range(100, 180)]
         public int Duration { get; set; }
 
-        [Required]
-        public string Movie { get; set; }
+        public string MovieTitle { get; set; }
 
-        [Required]
-        public string Lecturer { get; set; }
+        public string MovieUrl { get; set; }
+
+        public string LecturerName { get; set; }
 
         public void CreateMappings(IMapperConfigurationExpression configuration)
         {
             configuration.CreateMap<Projection, ProjectionEditViewModel>()
-                .ForMember(projVM => projVM.Movie, cfg => cfg.MapFrom(proj => proj.Movie.Title))
-                .ForMember(projVM => projVM.Lecturer, cfg => cfg.MapFrom(proj => proj.Lecturer.UserName));
+                .ForMember(projVM => projVM.MovieTitle, cfg => cfg.MapFrom(proj => proj.Movie.Title))
+                .ForMember(projVM => projVM.MovieUrl, cfg => cfg.MapFrom(proj => proj.Movie.ImageUrl))
+                .ForMember(projVM => projVM.LecturerName, cfg => cfg.MapFrom(proj => proj.Lecturer.UserName));
         }
     }
 }

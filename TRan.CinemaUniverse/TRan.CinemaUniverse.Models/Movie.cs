@@ -40,12 +40,15 @@ namespace TRan.CinemaUniverse.Models
         public string FilmingStory { get; set; }
 
         public Guid? GenreId { get; set; }
+
         public virtual Genre Genre { get; set; }
 
         public Guid? StarActorId { get; set; }
+
         public Actor StarActor { get; set; }
 
         public Guid? StarActressId { get; set; }
+
         public Actor StarActress { get; set; }
 
         public virtual ICollection<Projection> Projections

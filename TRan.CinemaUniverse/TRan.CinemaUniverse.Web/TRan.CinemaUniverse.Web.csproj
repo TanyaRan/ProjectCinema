@@ -329,6 +329,9 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="Areas\Profile\Views\Comments\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Movies\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Projections\All.cshtml" />
+    <Content Include="Areas\Administration\Views\Projections\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Actors\Create.cshtml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -391,7 +394,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Views\Projections\" />
     <Folder Include="Areas\Administration\Views\WeekOffers\" />
     <Folder Include="Areas\Profile\Views\Shared\" />
   </ItemGroup>
