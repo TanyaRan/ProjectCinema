@@ -14,8 +14,6 @@ namespace TRan.CinemaUniverse.Data.Repositories
 
         IQueryable<T> Deleted { get; }
 
-        IQueryable<T> AllWithInclude<TProperty>(Expression<Func<T, TProperty>> includeExpression);
-
         T GetById(Guid id);
 
         void Add(T entity);

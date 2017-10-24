@@ -43,11 +43,6 @@ namespace TRan.CinemaUniverse.Data.Repositories
             }
         }
 
-        public IQueryable<T> AllWithInclude<TProperty>(Expression<Func<T, TProperty>> includeExpression)
-        {
-            return this.All.Include(includeExpression);
-        }
-
         public T GetById(Guid id)
         {
             var item = this.context.Set<T>().Find(id);

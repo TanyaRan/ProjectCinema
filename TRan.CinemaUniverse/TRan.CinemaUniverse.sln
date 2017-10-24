@@ -19,6 +19,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{CD3114
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRan.CinemaUniverse.Common", "Common\TRan.CinemaUniverse.Common\TRan.CinemaUniverse.Common.csproj", "{BF9C7950-4C99-4100-AE05-80A893AD9FE6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{69C26CD5-30D5-4404-A764-6B5D6EA20321}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRan.CinemaUniverse.UnitTests", "Tests\TRan.CinemaUniverse.UnitTests\TRan.CinemaUniverse.UnitTests.csproj", "{5E172BD1-836E-43AA-993E-408228CAE860}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRan.CinemaUniverse.Data.UnitTests", "Tests\TRan.CinemaUniverse.Data.UnitTests\TRan.CinemaUniverse.Data.UnitTests.csproj", "{8D1E530E-F9A3-4FF8-B6C1-06568A980F2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRan.CinemaUniverse.Services.UnitTests", "Tests\TRan.CinemaUniverse.Services.UnitTests\TRan.CinemaUniverse.Services.UnitTests.csproj", "{6087BEEB-D7DD-41E7-8C53-104AF7691856}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +53,18 @@ Global
 		{BF9C7950-4C99-4100-AE05-80A893AD9FE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF9C7950-4C99-4100-AE05-80A893AD9FE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF9C7950-4C99-4100-AE05-80A893AD9FE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E172BD1-836E-43AA-993E-408228CAE860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E172BD1-836E-43AA-993E-408228CAE860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E172BD1-836E-43AA-993E-408228CAE860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E172BD1-836E-43AA-993E-408228CAE860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D1E530E-F9A3-4FF8-B6C1-06568A980F2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D1E530E-F9A3-4FF8-B6C1-06568A980F2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D1E530E-F9A3-4FF8-B6C1-06568A980F2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D1E530E-F9A3-4FF8-B6C1-06568A980F2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6087BEEB-D7DD-41E7-8C53-104AF7691856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6087BEEB-D7DD-41E7-8C53-104AF7691856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6087BEEB-D7DD-41E7-8C53-104AF7691856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6087BEEB-D7DD-41E7-8C53-104AF7691856}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +74,9 @@ Global
 		{99D0A2AE-1543-493A-B453-948A2099FC22} = {C21F4588-4EB4-4978-B6F7-E2A982ED0A15}
 		{2F820C28-4695-4D4A-B08E-D9DA939EB238} = {FFA4EF71-228F-4F98-B375-B000D17CE2D6}
 		{BF9C7950-4C99-4100-AE05-80A893AD9FE6} = {CD311426-E19B-4974-909C-10D503BEBF40}
+		{5E172BD1-836E-43AA-993E-408228CAE860} = {69C26CD5-30D5-4404-A764-6B5D6EA20321}
+		{8D1E530E-F9A3-4FF8-B6C1-06568A980F2F} = {69C26CD5-30D5-4404-A764-6B5D6EA20321}
+		{6087BEEB-D7DD-41E7-8C53-104AF7691856} = {69C26CD5-30D5-4404-A764-6B5D6EA20321}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {614F2BE6-C69E-4936-B51A-FF520C7384F1}
