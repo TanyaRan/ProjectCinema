@@ -3,12 +3,13 @@ using System;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
+using TRan.CinemaUniverse.Data.Contracts;
 using TRan.CinemaUniverse.Models;
 using TRan.CinemaUniverse.Models.Contracts;
 
 namespace TRan.CinemaUniverse.Data
 {
-    public class CinemaSqlDbContext : IdentityDbContext<User>
+    public class CinemaSqlDbContext : IdentityDbContext<User>, ICinemaSqlDbContext
     {
         public CinemaSqlDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

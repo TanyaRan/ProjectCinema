@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CinemaSqlDbContext.cs" />
+    <Compile Include="Contracts\ICinemaSqlDbContext.cs" />
     <Compile Include="Migrations\201710042209364_Initial.cs" />
     <Compile Include="Migrations\201710042209364_Initial.Designer.cs">
       <DependentUpon>201710042209364_Initial.cs</DependentUpon>

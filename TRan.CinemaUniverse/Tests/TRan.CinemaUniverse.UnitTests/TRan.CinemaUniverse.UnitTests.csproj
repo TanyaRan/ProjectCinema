@@ -87,11 +87,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\Genres\All_Should.cs" />
-    <Compile Include="Controllers\Genres\Create_Should.cs" />
-    <Compile Include="Controllers\Genres\Deleted_Should.cs" />
-    <Compile Include="Controllers\Genres\Delete_Should.cs" />
-    <Compile Include="Controllers\Genres\Edit_Should.cs" />
+    <Compile Include="Controllers\GenresControllersTests\All_Should.cs" />
+    <Compile Include="Controllers\GenresControllersTests\Create_Should.cs" />
+    <Compile Include="Controllers\GenresControllersTests\Deleted_Should.cs" />
+    <Compile Include="Controllers\GenresControllersTests\Delete_Should.cs" />
+    <Compile Include="Controllers\GenresControllersTests\Edit_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -121,9 +121,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\Actors\" />
-    <Folder Include="Controllers\Movies\" />
-    <Folder Include="Controllers\Projections\" />
+    <Folder Include="Controllers\ActorsControllerTests\" />
+    <Folder Include="Controllers\MoviesControllersTests\" />
+    <Folder Include="Controllers\ProjectionsControllersTests\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

@@ -332,6 +332,11 @@
     <Content Include="Areas\Administration\Views\Projections\All.cshtml" />
     <Content Include="Areas\Administration\Views\Projections\Create.cshtml" />
     <Content Include="Areas\Administration\Views\Actors\Create.cshtml" />
+    <None Include="Properties\PublishProfiles\cinemauniverse - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\cinemauniverse - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\TRanCinemaUniverseWeb20171024101628 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
