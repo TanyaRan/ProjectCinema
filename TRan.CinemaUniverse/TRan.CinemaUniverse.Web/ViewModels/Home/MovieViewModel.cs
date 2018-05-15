@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using System;
 using TRan.CinemaUniverse.Models;
 using TRan.CinemaUniverse.Web.Infrastructure;
 
@@ -6,7 +7,7 @@ namespace TRan.CinemaUniverse.Web.ViewModels.Home
 {
     public class MovieViewModel : IMapFrom<Movie>, IHaveCustomMappings
     {
-        // public Guid Id { get; set; }
+        public Guid Id { get; set; }
 
         public string Title { get; set; }
 

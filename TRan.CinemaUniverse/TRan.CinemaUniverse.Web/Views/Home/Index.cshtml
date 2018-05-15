@@ -18,12 +18,3 @@
     }
 </div>
 
-<h3>Edit Movie</h3>
-<div class="row">
-    @using (Html.BeginForm("Index", "Home", FormMethod.Post, null))
-    {
-        @Html.Partial("_MovieEditPartial", Model.Movies.First())
-        <input type="submit" value="Submit" />
-    }
-</div>
-

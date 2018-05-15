@@ -125,11 +125,13 @@ namespace TRan.CinemaUniverse.Web.Areas.Administration.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(MovieEditViewModel model)
         {
-            if (this.ModelState.IsValid)
-            {
-                var movie = this.mapper.Map<Movie>(model);
-                this.movieService.Update(movie);
-            }
+            //if (!this.ModelState.IsValid)
+            //{
+            //    return this.View(model);
+            //}
+
+            //var movie = this.mapper.Map<Movie>(model);
+            //this.movieService.Update(movie);
 
             return this.RedirectToAction("All", "Movies", new { area = "administration" });
         }

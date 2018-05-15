@@ -332,6 +332,8 @@
     <Content Include="Areas\Administration\Views\Projections\All.cshtml" />
     <Content Include="Areas\Administration\Views\Projections\Create.cshtml" />
     <Content Include="Areas\Administration\Views\Actors\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_MoviesEditPartial.cshtml" />
+    <Content Include="Areas\Administration\Views\Movies\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\cinemauniverse - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\cinemauniverse - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
@@ -393,7 +395,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_MovieDetailsPartial.cshtml" />
-    <Content Include="Views\Shared\_MovieEditPartial.cshtml" />
     <Content Include="Views\Shared\NotFound.cshtml" />
     <Content Include="Views\DisplayMovies\Details.cshtml" />
   </ItemGroup>

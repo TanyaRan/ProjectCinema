@@ -18,6 +18,7 @@ namespace TRan.CinemaUniverse.Web.Controllers
             this.mapper = mapper;
         }
 
+        [OutputCache(CacheProfile = "cacheProfile1")]
         public ActionResult Index()
         {
             var movies = this.movieService
@@ -31,28 +32,6 @@ namespace TRan.CinemaUniverse.Web.Controllers
             };
 
             return View(viewModel);
-        }
-
-        [HttpPost]
-        public ActionResult Index(MovieViewModel model)
-        {
-            // this.movieService.Update();
-
-            return RedirectToAction("About");
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
         }
     }
 }

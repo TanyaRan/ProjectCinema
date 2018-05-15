@@ -1,8 +1,8 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
+using System;
+using System.ComponentModel.DataAnnotations;
 using TRan.CinemaUniverse.Models;
 using TRan.CinemaUniverse.Web.Infrastructure;
-using System.ComponentModel.DataAnnotations;
 
 namespace TRan.CinemaUniverse.Web.Areas.Administration.ViewModels.Projections
 {
@@ -10,9 +10,11 @@ namespace TRan.CinemaUniverse.Web.Areas.Administration.ViewModels.Projections
     {
         public Guid Id { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Day { get; set; }
 
         [DataType(DataType.Time)]
+        [DisplayFormat(DataFormatString = "{0:HH:mm}", ApplyFormatInEditMode = true)]
         public DateTime StartTime { get; set; }
 
         [Range(100, 180)]

@@ -1,0 +1,23 @@
+﻿@using TRan.CinemaUniverse.Web.Areas.Administration.ViewModels.Movies
+@model MovieEditViewModel
+@{
+    ViewBag.Title = "Edit Movie";
+}
+
+<h3>@ViewBag.Title</h3>
+<div class="row">
+    @using (Html.BeginForm("Edit", "Movies", FormMethod.Post, null))
+    { 
+        @Html.AntiForgeryToken()
+
+        @Html.Partial("_MoviesEditPartial", Model)
+
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-success" value="Edit" />
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

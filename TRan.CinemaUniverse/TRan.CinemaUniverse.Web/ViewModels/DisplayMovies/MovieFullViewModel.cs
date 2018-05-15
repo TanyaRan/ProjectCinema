@@ -1,12 +1,6 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 using TRan.CinemaUniverse.Models;
 using TRan.CinemaUniverse.Web.Infrastructure;
-using TRan.CinemaUniverse.Web.ViewModels.DisplayActors;
 
 namespace TRan.CinemaUniverse.Web.ViewModels.DisplayMovies
 {
@@ -25,8 +19,6 @@ namespace TRan.CinemaUniverse.Web.ViewModels.DisplayMovies
         public string Award { get; set; }
 
         public string FilmingStory { get; set; }
-
-        public IEnumerable<ActorViewModel> Actors { get; set; }
 
         public void CreateMappings(IMapperConfigurationExpression configuration)
         {
